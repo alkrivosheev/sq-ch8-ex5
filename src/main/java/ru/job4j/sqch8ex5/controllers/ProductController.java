@@ -23,13 +23,16 @@ public class ProductController {
 
     @PostMapping("/products")
     public String addProduct(
+            /* Код ниже можно и не писать т.к. Spring может и сам сопоставить
             @RequestParam String name,
-            @RequestParam double price,
+            @RequestParam double price, */
+            Product p,
             Model model
             ) {
+/*    Код ниже можно и не писать т.к. Spring может и сам сопоставить
         Product p = new Product();
         p.setName(name);
-        p.setPrice(price);
+        p.setPrice(price);*/
         productService.addProduct(p);
         var products = productService.findAll();
         model.addAttribute("products", products);
